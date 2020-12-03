@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #111411;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #abb3ac;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h2 align="center">Public Registration Form</h2>
+
+<div>
+  <form action="/public/add" method="POST">
+    <label>Contact Number</label>
+    <input type="text" id="contact_no" name="contactNumber" ><br>
+    
+    <label>Aadhar Number</label>
+    <input type="text" id="aadharNo" name="aadharNo" ><br>
+    
+    <label>Name</label>
+    <input type="text" id="uname" name="name" ><br>
+    
+    <label>Age</label>
+    <input type="text" id="uage" name="age" ><br>
+    
+    <label>Blood Group</label>
+    <input type="text" id="blood_group" name="bloodGroup" ><br>
+    
+
+    <label>Profession</label>
+    <input type="text" id="profession" name="workInformation" ><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

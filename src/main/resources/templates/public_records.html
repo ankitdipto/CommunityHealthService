@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of public_records</h2></caption>
+			<tr>
+				<th>aadhar_no</th>
+				<th>age</th>
+				<th>blood_group</th>
+				<th>contact_number</th>
+				
+				<th>name</th>
+				<th>Profession</th>
+				
+			</tr>
+	    <tr th:each="public_records : ${public_recordss}">
+				
+					<td th:text="${public_records.aadharNo}"   >
+					<td th:text="${public_records.age}"   >
+					<td th:text="${public_records.bloodGroup}"   >
+					<td th:text="${public_records.contactNumber}"   >
+					
+					<td th:text="${public_records.name}"   >
+					<td th:text="${public_records.workInformation}"   >
+					<!--td th:text="${public_records.addressCode}" -->
+             </tr>
+            
+        </table>
+    </div>   
+</body>
+</html>

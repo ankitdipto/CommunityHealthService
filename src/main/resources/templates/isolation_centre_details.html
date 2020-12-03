@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Isolation Centres</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of isolation_centre_details</h2></caption>
+			<tr>
+				<th>centre_code</th>
+				<th>accommodation_strength</th>
+								
+				<th>no_of_vacancies</th>
+				
+				<th>size_of_room</th>
+				
+				<th>total_cost_per_day</th>
+				<th>locality</th>
+				<th>address code</th>
+			</tr>
+	    	<tr th:each="Isolation_Centre : ${isocentres}">
+				
+					<td  th:text="${Isolation_Centre.centreCode}"    >	
+					<td  th:text="${Isolation_Centre.accommodationStrength}"    >
+					
+					<td  th:text="${Isolation_Centre.noOfVacancies}"    >
+					
+					<td  th:text="${Isolation_Centre.sizeOfRoom}"    >
+					
+					<td  th:text="${Isolation_Centre.totalCostPerDay}"    >
+					<td  th:text="${Isolation_Centre.zone.wardNo}"  >
+					<td  th:text="${Isolation_Centre.location3.addressCode}" >				
+            	</tr>
+           
+        </table>
+    </div>   
+</body>
+</html>
+<!--td  th:text="${isolation_centre_details.ACCOMMODATION_STRENGTH}"    >
+					<td  th:text="${isolation_centre_details.ADDRESS}"    >
+					<td  th:text="${isolation_centre_details.LOCATION}"    >
+					<td  th:text="${isolation_centre_details.NO_OF_VACANCIES}"    >
+					<td  th:text="${isolation_centre_details.PINCODE}"    >
+					<td  th:text="${isolation_centre_details.SIZE_OF_ROOM}"    >
+					<td  th:text="${isolation_centre_details.STREET}"    >
+					<td  th:text="${isolation_centre_details.TOTAL_COST_PER_DAY}"    >
+					<td  th:text="${isolation_centre_details.LOCALITY}"  /></td-->
+						<!--td  th:text="${Isolation_Centre.Location}"  /></td-->

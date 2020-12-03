@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+		<form action="/hospital/sort" method="POST">
+			<label for="beds">Choose a filter</label>
+			<select id="beds" name="argument" size="1">
+			  <option value="doctor">doctor</option>
+			  <option value="general">general</option>
+			  <option value="covid">covid</option>
+			  <option value="dengue">dengue</option>
+			  <option value="none">none</option>
+			</select><br><br>
+			<input type="submit">
+		  </form>
+        <table border="1" cellpadding="5">
+            <caption><h2>List of hospital_information</h2></caption>
+			<tr>
+				<th>hospital_name</th>
+				<th>no_of_covid19_beds_free</th>
+				<th>no_of_dengue_beds_free</th>
+				<th>no_of_full_time_doctors</th>
+				<th>no_of_general_beds</th>
+				<th>rt_pcr_test_availability</th>
+				<th>Ward Number</th>
+				<!--th>pincode</th>
+				<th>street name</th>
+				<th>street number</th>
+				<th>block number</th-->
+			</tr>
+	    <tr th:each="hospital_information : ${hospitals}">
+				
+					<td th:text="${hospital_information.hospitalName}"  >
+					
+					<td th:text="${hospital_information.noOfCovidBedsFree}"  >
+					<td th:text="${hospital_information.noOfDengueBedsFree}"  >
+					<td th:text="${hospital_information.noOfFullTimeDoctors}"    >
+					<td th:text="${hospital_information.noOfGeneralBeds}"    >
+					<td th:text="${hospital_information.rtpcrTestAvailibility}"    >
+					<td th:text="${hospital_information.zone3.wardNo}"    >
+					<!--td th:text="${hospital_information.location2.pincode" -->
+					<!--td th:text="${hospital_information.location2.streetName" >
+					<td th:text="${hospital_information.location2.streetNo" >
+					<td th:text="${hospital_information.location2.blockNo" -->
+					<!--td th:text="${hospital_information.location2.addressCode" -->
+             </tr>
+            
+        </table>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of club_member_records</h2></caption>
+			<tr>
+				<th>membership_id</th>
+				<th>age</th>
+				<th>availability_status</th>
+				<th>join_date</th>
+				<th>position</th>
+				<th>name</th>
+				<th>aadhar_no</th>
+			</tr>
+	    	<tr th:each = "club_member_records : ${club_member_recordss}">
+				<td th:text="${club_member_records.membershipId}" >
+				<td th:text="${club_member_records.age}"  >
+				<td th:text="${club_member_records.availabilityStatus}" >
+				<td th:text="${club_member_records.joinDate}"  >
+				<td th:text="${club_member_records.position}"  >
+				<td th:text="${club_member_records.name}"  >
+				<td th:text="${club_member_records.aadharNo}"  >
+            </tr>
+        </table>
+    </div>   
+</body>
+</html>

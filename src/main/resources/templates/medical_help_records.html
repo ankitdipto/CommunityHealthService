@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Health Workers</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of medical_help_records</h2></caption>
+			<tr>
+				<th>medical_id</th>
+								
+				<th>name</th>
+				<th>profession</th>
+				<th>availability_status</th>
+			</tr>
+	    <tr th:each="medical_help_records :${healthworkers}">
+				
+					<td th:text="${medical_help_records.medicalId}"   >
+					
+					
+					<td th:text="${medical_help_records.name}"   >
+					<td th:text="${medical_help_records.profession}"   >
+					<!--div th:switch= "${medical_help_records.availibilityStatus == true}"   >
+						<td th:case="${true}">available</td>
+						<td th:case="${false}">unavailable</td>
+					</div-->
+					<!--td-->
+						<td th:if="${medical_help_records.availibilityStatus == true}" style="background-color:rgb(84, 218, 84);color:white">available</td>
+						<td th:unless="${medical_help_records.availibilityStatus == true}" style="background-color:rgb(238, 56, 56);color:white">unavailable</td>
+					<!--/td-->
+             </tr>
+            
+        </table>
+    </div>   
+</body>
+</html>

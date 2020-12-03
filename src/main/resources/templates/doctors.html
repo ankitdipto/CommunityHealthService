@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of doctors</h2></caption>
+			<tr>
+				<th>licence_no</th>
+				<th>Name</th>
+				<th>Degree</th>
+				<th>Duty Hours</th>
+				<th>chamber pincode</th>
+				<th>chamber street name</th>
+				<th>chamber street number</th>
+				<th>chamber block number</th>
+			</tr>
+	    <tr th:each="doctor : ${doctors}">
+					<td th:text="${doctor.medicalId}"  >
+					<td th:text="${doctor.healthworker.name}" >
+					<td th:text="${doctor.degree}"  >
+					<td th:text="${doctor.dutyHours}"  >
+					<td th:text="${doctor.location4.pincode}" >
+					<td th:text="${doctor.location4.streetName}" >
+					<td th:text="${doctor.location4.streetNo}" >
+					<td th:text="${doctor.location4.blockNo} " >
+             </tr>
+            
+        </table>
+    </div>   
+</body>
+</html>

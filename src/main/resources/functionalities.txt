@@ -1,0 +1,20 @@
+
+Features:
+
+1. Health status of all the zones displayed in decreasing number of active Covid-19 cases.
+
+2. Time marked daily number of covid19 and dengue cases for the lasr 7 consecutive days. 
+
+3. Appropriate color of zones (red,orange and green) on the basis of a threshold number of active covid cases.
+
+4. Display of the zones in sorted order of last date of sanitisation status.
+
+5. A covid19 patient marking himself recovered must fire a trigger to delete his record from the Covid19_Active table and add him to 
+the Covid-19 recovered table. 
+
+6. A separate table containing the full history of Covid19 cases in the whole region(Behala) under the administration of the club. It 
+can be later used to draw a graph.
+
+7. General public will only have write/edit (get and put) access to the PUBLIC_RECORDS table of his own tuple/record.
+
+8. A separate table SEEK_HELP_IN_EMERGENCY to maintain the emergency requirements conveyed by the people to the club authority.  

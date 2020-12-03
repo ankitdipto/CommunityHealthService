@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of covid19_recovered</h2></caption>
+			<tr>
+				<th>aadhar_id</th>
+				<th>name</th>
+				<th>blood_group</th>
+				<th>current_health_status</th>
+				
+			</tr>
+	    	<tr th:each="covid19_recovered : ${covid19_recovereds}">
+				<td th:text="${covid19_recovered.aadharNo}"  >
+				<td th:text="${covid19_recovered.name}"  >
+				<td th:text="${covid19_recovered.bloodGroup}"  >
+				<td th:text="${covid19_recovered.currentHealthStatus}"  >
+				</tr>
+            
+        </table>
+    </div>   
+</body>
+</html>

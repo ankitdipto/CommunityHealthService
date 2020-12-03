@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of zone</h2></caption>
+			<tr>
+				<th>Ward Number</th>
+				<th>MLA</th>
+				<th>Population Density</th>
+				<th>Last Sanitisation Date</th>
+				<th>Total Covid19 cases</th>
+				<th>Total Number of Citizens</th-->
+			</tr>
+	    <tr th:each="zone : ${zones}">
+			
+				<td  th:text="${zone.wardNo}"   >
+				<td  th:text="${zone.mla}"   >
+				<td  th:text="${zone.populationDensity}"   >
+				<td  th:text="${zone.sanitisationStatus}"  >
+				<td  th:if="${zone.noOfCovid19Cases > 150}" th:text="${zone.noOfCovid19Cases}"  style="background-color:rgb(238, 56, 56);" >
+				<td  th:unless="${zone.noOfCovid19Cases > 150}" th:text="${zone.noOfCovid19Cases}"  style="background-color:rgb(110, 235, 137);" ></td>
+				<td  th:text="${zone.noOfResidents}"   >
+					
+            </tr>
+      
+        </table>
+    </div>   
+</body>
+</html>
+<!--td  th:text="${zone.ward_no}"   >
+					<td  th:text="${zone.mla}"   >
+					<td  th:text="${zone.number_of_covid19_cases}"   >
+					<td  th:text="${zone.number_of_residents}"   >
+					<td  th:text="${zone.population_density}"   >
+					<td  th:text="${zone.sanitisation_status}"  /></td-->
+						<!--th>ward_no</th>
+						<th>mla</th>
+						<th>number_of_covid19_cases</th>
+						<th>number_of_residents</th>
+						<th>population_density</th>
+						<th>sanitisation_status</th-->

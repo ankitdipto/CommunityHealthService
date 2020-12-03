@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+      <meta charset="ISO-8859-1">
+      <title>High Chart Example - Spring Boot</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+
+<body>
+      <div align="center">
+            <h2>Spring Boot Highcharts Example</h2>
+      </div>
+      <figure class="highcharts-figure">
+            <div id="container"></div>
+      </figure>
+      <script type="text/javascript">
+            $(document).ready(
+                  function () {
+                        $.ajax({
+                              url: "/get-data-line",
+                              success: function (result) 
+                              {
+                                    var days=[];
+                                    var cases=[];      
+                                    console.log(result);
+                                    Object.keys(result).forEach(
+                                          function (key) {
+                                                days.push(key);
+                                                cases.push(result[key]);
+                                          });
+                                    drawChart(days,cases);
+                              }
+                        });
+                  });
+      function drawChart(days,cases)
+      {
+            Highcharts.chart('container', {
+                  chart: {
+                        type: 'line'
+                  },
+                  title: {
+                        text: 'Day-wise Distribution of Covid-19 in Behala'
+                  },
+                  subtitle: {
+                        text: 'Source: WEST BENGAL HEALTH ASSOCIATION'
+                  },
+                  xAxis: {
+                        categories: days
+                  },
+                  yAxis: {
+                        title: {
+                              text: 'Cases Reported'
+                        }
+                  },
+                  plotOptions: {
+                        line: {
+                              dataLabels: {
+                                    enabled: true
+                              },
+                              enableMouseTracking: false
+                        }
+                  },
+                  series: [{
+                        name: 'Novel Coronavirus',
+                        data: cases
+                  }]
+            });
+      }
+      </script>
+</body>
+
+</html>

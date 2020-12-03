@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of ambulance_details</h2></caption>
+			<tr>
+				<th>registration_no</th>
+				<th>owner_name</th>
+				<th>parking_location</th>
+				<th>medical_staff_id</th>
+			</tr>
+	    	<tr th:each=" ambulance_details : ${ambulance_detailss}">
+				<td th:text = "${ambulance_details.registrationNo}" >
+				<td th:text = "${ambulance_details.ownerName}" >
+				<td th:text = "${ambulance_details.healthworker2.medicalId}" >
+				<td th:text = "${ambulance_details.availabilityStatus}">
+           	</tr>
+        </table>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HOME</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1" cellpadding="5">
+            <caption><h2>List of covid19_active</h2></caption>
+			<tr>
+				<th>Aadhar Number</th>
+				<th>Age</th>
+				<th>Respiratory Problem</th>
+				<th>Infection Status</th>
+			</tr>
+	    	<tr th:each=" covid19_active : ${covid19_actives}">
+				<td th:text="${covid19_active.aadharNo}"  >
+				<td th:text="${covid19_active.age}"  >
+				<td th:text="${covid19_active.breathingProblem}" >
+				<td th:text="${covid19_active.status}"  >
+			</tr>
+            
+        </table>
+    </div>   
+</body>
+</html>
